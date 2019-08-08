@@ -15,7 +15,7 @@ interface DAO {
     suspend fun incertDrinks(waterDrinks: WaterDrinks)
 
     @Query("SELECT date, sum(volume) FROM water_drinks WHERE date BETWEEN :data_start and :data_end GROUP BY date")
-    abstract fun getWeekWater(data_start: String, data_end:String): LiveData<DailyDrink>
+    fun getWeekWater(data_start: String, data_end:String): List<DailyDrink>
 
     @Delete
     fun deleteDrink(vararg drink: WaterDrinks)

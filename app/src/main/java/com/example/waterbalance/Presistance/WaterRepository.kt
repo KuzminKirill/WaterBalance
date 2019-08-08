@@ -30,7 +30,7 @@ class WaterRepository(context: Context) {
         return mWaterDatabase.dao.getAllDrinks()
     }
 
-    fun weekTask(data_start: String, data_end:String): LiveData<DailyDrink>{
+    fun weekTask(data_start: String, data_end:String): List<DailyDrink> { //
         return mWaterDatabase.dao.getWeekWater(data_start, data_end)
     }
 
