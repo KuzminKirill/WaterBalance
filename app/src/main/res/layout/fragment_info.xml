@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".View.InfoFragment" android:id="@+id/frameLayout2">
+
+
+    <Button
+            android:text="Вода"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/waterBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="9dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/coffeBtn"
+            app:layout_constraintEnd_toStartOf="@+id/coffeBtn"/>
+    <Button
+            android:text="Кофе"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/coffeBtn"
+            app:layout_constraintStart_toEndOf="@+id/waterBtn" app:layout_constraintEnd_toStartOf="@+id/teaBtn"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="3dp"/>
+    <Button
+            android:text="Чай"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teaBtn"
+            app:layout_constraintBaseline_toBaselineOf="@+id/juseBtn" app:layout_constraintStart_toEndOf="@+id/coffeBtn"
+            app:layout_constraintEnd_toStartOf="@+id/juseBtn" android:layout_marginEnd="2dp"
+    />
+    <Button
+            android:text="Сок"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/juseBtn"
+            app:layout_constraintStart_toEndOf="@+id/teaBtn" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="17dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
