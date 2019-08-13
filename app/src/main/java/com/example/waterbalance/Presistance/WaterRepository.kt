@@ -1,13 +1,12 @@
 package com.example.waterbalance.Presistance
 
 import android.content.Context
-import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.lifecycle.LiveData
 import com.example.waterbalance.Model.DailyDrink
 import com.example.waterbalance.Model.WaterDrinks
 
 
-class WaterRepository(context: Context) {
+class WaterRepository(context: Context?) {
 
     private lateinit var mWaterDatabase: WaterDatabase
     private lateinit var mDailyDrink: DailyDrink
@@ -17,8 +16,8 @@ class WaterRepository(context: Context) {
 
     }
 
-    fun insertTask(waterDrink: WaterDrinks) {
-
+    suspend fun insertTask(waterDrink: WaterDrinks) {
+        return mWaterDatabase.dao.insertDrinks(waterDrink)
     }
 
     fun updateTask(waterDrink: WaterDrinks) {

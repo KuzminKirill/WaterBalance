@@ -6,7 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.waterbalance.R
+import com.example.waterbalance.Model.WaterDrinks
+import com.example.waterbalance.Presistance.WaterRepository
+import android.widget.SeekBar
+import kotlinx.android.synthetic.main.fragment_adition.view.*
+import kotlinx.android.synthetic.main.fragment_adition.view.drinkTypeText
+import kotlinx.coroutines.runBlocking
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,18 +25,50 @@ private const val ARG_PARAM2 = "param2"
  */
 class AditionFragment : Fragment() {
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var rootView = inflater.inflate(R.layout.fragment_adition, container, false)
+        var rootView = inflater.inflate(com.example.waterbalance.R.layout.fragment_adition, container, false)
 
+        var mWaterRepo = WaterRepository(context)
 
+        val drinkText = rootView.drinkTypeText
+        val mil = rootView.mililiters
+        val bar = rootView.seekBar
+        var subBtn = rootView.submit
 
+        var mills = 0
+
+        bar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
+                mil.text = progress.toString()
+                mills = progress
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+                //
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+                //
+            }
+
+        })
+        val drink = arguments?.getString("drink")
+        drinkText.text = drink
+
+        subBtn.setOnClickListener{
+            runBlocking {
+                //mWaterRepo.insertTask()
+            }
+        }
 
         return rootView
     }
+
 
 
 

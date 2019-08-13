@@ -36,23 +36,23 @@ class InfoFragment : Fragment() {
         val juseV = rootView.juseBtn
 
         waterV.setOnClickListener {
-            var bundle: Bundle  = bundleOf("Drink" to "water")
+            var bundle: Bundle  = bundleOf("drink" to "water")
             it.findNavController().navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
         }
 
         coffeV.setOnClickListener {
-            var bundle: Bundle  = bundleOf("Drink" to "coffee")
+            var bundle  = bundleOf("drink" to "coffee")
             it.findNavController().navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
         }
 
         teaV.setOnClickListener {
-            var bundle: Bundle  = bundleOf("Drink" to "tea")
-            it.findNavController().navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
+            var bundle  = bundleOf("drink" to "tea")
+            view?.findNavController()?.navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
         }
 
         juseV.setOnClickListener {
-            var bundle: Bundle  = bundleOf("Drink" to "juse")
-            it.findNavController().navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
+            var bundle = bundleOf("drink" to "juse")
+            view?.findNavController()?.navigate(R.id.action_infoFragment_to_aditionFragment, bundle)
         }
 
 

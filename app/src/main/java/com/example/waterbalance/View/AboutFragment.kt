@@ -43,7 +43,7 @@ class AboutFragment : Fragment() {
 
         var sex = rootView.findViewById<Switch>(R.id.sex_switch)
 
-        var check: Boolean = true  //пол
+        var check: Boolean = true  //пол, пока не используется, но если нужен будет он тут есть
 
         val submit = rootView.findViewById<Button>(R.id.sumbitBtn)
 

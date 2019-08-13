@@ -9,7 +9,7 @@ import com.example.waterbalance.Model.WaterDrinks
 import com.example.waterbalance.Model.TiviTypeConverters
 
 
-@Database(entities = arrayOf(WaterDrinks::class), version = 1)
+@Database(entities = arrayOf(WaterDrinks::class), version = 3)
 @TypeConverters(TiviTypeConverters::class)
 abstract class WaterDatabase: RoomDatabase() {
 
@@ -21,10 +21,10 @@ abstract class WaterDatabase: RoomDatabase() {
 
         private var instance: WaterDatabase? = null
 
-        internal fun getInstance(context: Context): WaterDatabase {
+        internal fun getInstance(context: Context?): WaterDatabase {
             if (instance == null) {
                 instance = Room.databaseBuilder(
-                    context.applicationContext,
+                    context!!.applicationContext,
                     WaterDatabase::class.java,
                     DATABASE_NAME
                 ).build()
